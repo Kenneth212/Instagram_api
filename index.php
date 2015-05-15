@@ -38,11 +38,11 @@ function printImages($userID){
 	$instagramInfo = connectToInstagram($url);
 	$results = json_decode($instagramInfo, true);
 	//Parse through the information one by one.
-	foreach ($results['data'] as $items){
+	 foreach ($results['data'] as $items){
 		$image_url = $items['images']['low_resolution']['url'];//going to go through all of my results and give myself back the url of those pictures because we want to save it in the PHP server
 		echo '<img src=" ' .$image_url. ' "/><br/>';
 		//calling a function to save that $image_url
-		savePictures($url_url);
+		savePictures($image_url);
 	}
 }
 //function to save image to server
